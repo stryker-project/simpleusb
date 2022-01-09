@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SimpleUsb</string>
+    <string name="wait">Waiting for usb...</string>
+</resources>
