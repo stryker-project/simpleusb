@@ -15,7 +15,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
-    public Boolean usbstate = false;
     public DB db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,15 +30,15 @@ public class MainActivity extends AppCompatActivity {
         usb.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                boolean temp = usbstate;
-                usbstate = isConnected();
-                if (temp != usbstate && usbstate){
+                boolean status = isConnected();
+                if (status){
                     runOnUiThread(() -> {
                         img.setAnimation(R.raw.wifi_dongle);
                         img.playAnimation();
-                        info.setText("["+getpid()+"] "+db.getDeviceNameByPid(getpid()));
+                        String pid = getpid();
+                        info.setText("["+pid+"] "+db.getDeviceNameByPid(pid));
                     });
-                }else if (temp != usbstate){
+                } else {
                     runOnUiThread(() -> {
                         img.setAnimation(R.raw.wait_usb);
                         img.playAnimation();
