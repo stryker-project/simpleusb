@@ -14,17 +14,14 @@
         android:layout_gravity="center|center_vertical"
         app:lottie_autoPlay="true"
         app:lottie_rawRes="@raw/wait_usb"
-        app:lottie_loop="true"
-        />
+        app:lottie_loop="true" />
     <TextView
         android:id="@+id/info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/wait"
         android:textSize="22dp"
         android:gravity="center"
         android:layout_marginTop="15dp"
-        android:layout_gravity="center"
- />
+        android:layout_gravity="center" />
 
 </LinearLayout>
