@@ -17,7 +17,7 @@ public class DB {
     }
     public String getDeviceNameByPid(String pid){
         String JSON = "";
-        String result = "Sorry, can`t fin your device in our db...";
+        String result = "Sorry, can't find your device in our db...";
         BufferedReader reader = null;
         JSONObject usblist = null;
         try {
